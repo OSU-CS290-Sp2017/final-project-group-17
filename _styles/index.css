@@ -177,3 +177,26 @@ a {
    border: 1px solid #000000;
    background-color: #fff;
 }
+
+#share a {
+  display:right;
+  background-color:transparent;
+  margin:5px;
+}
+
+/* #share a:hover {
+  background-color:darkgray;
+  shape:circle;
+} */
+
+.socicon-facebook {
+  color:#3e5b98
+}
+
+.socicon-twitter {
+  color:#4da7de
+}
+
+.socicon-mail {
+  color:#000000
+}
