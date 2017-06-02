@@ -33,6 +33,14 @@ a {
      float: right;
 }
 
+#loginButton:hover {
+   cursor: pointer;
+}
+
+#signupButton:hover {
+   cursor: pointer;
+}
+
 .navitem.signup {
      float: right;
 }
@@ -47,6 +55,30 @@ a {
 
 .header {
    font-size: 25px;
+}
+
+.banner {
+   text-align: center;
+   margin: 70px 20px 20px 20px;
+}
+
+.banner-logo {
+   display: inline-block;
+}
+
+.banner-logo img {
+   width: 200px;
+}
+
+.banner-text {
+   display: inline-block;
+   position: relative;
+   bottom: 35px;
+}
+
+.banner-text p {
+   font-size: 30px;
+
 }
 
 .hidden {
