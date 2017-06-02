@@ -178,25 +178,13 @@ a {
    background-color: #fff;
 }
 
-#share a {
-  display:right;
-  background-color:transparent;
-  margin:5px;
+.socialMedia-Bar {
+   text-align: right;
+   margin-right: 50px;
 }
 
-/* #share a:hover {
-  background-color:darkgray;
-  shape:circle;
-} */
-
-.socicon-facebook {
-  color:#3e5b98
-}
-
-.socicon-twitter {
-  color:#4da7de
-}
-
-.socicon-mail {
-  color:#000000
+.socialIcon {
+   height: 40px;
+   width: 40px;
+   padding: 5px;
 }
