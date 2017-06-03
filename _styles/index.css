@@ -193,3 +193,7 @@ a {
    width: 40px;
    padding: 5px;
 }
+
+.socialIcon:hover {
+   cursor: pointer;
+}
