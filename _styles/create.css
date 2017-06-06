@@ -1,84 +1,16 @@
-body {
-     /* font-family: 'Roboto', sans-serif; */
-     font-family: 'Oswald', sans-serif;
-     margin: 0;
-     background-color: #FFFFFF;
-}
-
-a {
-     text-decoration: none;
-     color: white;
-}
-
-.navbar {
-     background-color: #000000;
-     font-size: 20px;
-     font-weight: lighter;
-     overflow: hidden;
-     position: fixed;
-     top: 0px;
-     width: 100%;
-     z-index: 1;
-}
-
-.navitem {
-     display: inline-block;
-     color: #FFFFFF;
-     padding-left: 10px;
-     padding-right: 10px;
-}
-.navlist {
-     margin: 0;
-     padding-left: 40px;
-     padding-right: 40px;
-     padding-top: 10px;
-     padding-bottom: 10px;
-}
-
-.navitem.login {
-     float: right;
-}
-
-#loginButton:hover {
-   cursor: pointer;
-}
-
-#signupButton:hover {
-   cursor: pointer;
-}
-
-.navitem.signup {
-     float: right;
-}
-
-.navitem.create {
-  float: right;
-}
-
-.UISocialButton {
-   margin: 20px 20px 20px 20px;
-   border: 1px solid black;
-   padding-top: 10px;
-   padding-bottom: 10px;
-}
-
-.UISocialButton:hover {
+.addSetContainer {
    background-color: rgba(0, 0, 0, 0.10);
-   text-decoration-color: white;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   text-align: center;
+}
+
+.addSetContainer:hover {
+   background-color: rgba(0, 0, 0, 0.30);
    cursor: pointer;
 }
 
-.socialMedia-Bar {
-   text-align: right;
-   margin-right: 50px;
-}
-
-.socialIcon {
-   height: 40px;
-   width: 40px;
-   padding: 5px;
-}
-
-.socialIcon:hover {
-   cursor: pointer;
+.addSetButton {
+   color: black;
+   font-size: 18px;
 }
