@@ -28,12 +28,3 @@ closeLoginModal.addEventListener('click', function() {
    modal.className = 'hidden';
    modalBackdrop.className = 'hidden';
 })
-
-/* var createButton = document.getElementById('createButton');
-createButton.addEventListener('click', function() {
-  modalHeader.innerHTML = 'Create';
-  socialButtons[0].textContent = 'Term'
-  socialButtons[1].textContent = 'Definition'
-  modal.className = '';
-  modalBackdrop.className = '';
-}); */
