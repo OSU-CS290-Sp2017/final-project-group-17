@@ -1,7 +1,7 @@
-var addSetButton = document.querySelector('.addSetButton');
+var addSetButton = document.querySelector('.addSetContainer');
 var modalBackdrop = document.getElementById('modal-backdrop');
 var addSetmodal = document.getElementById('addSet-modal');
-var closeSetModal = document.querySelector('.modal-close-button');
+var closeSetModal = document.getElementById('closeSetModal');
 
 addSetButton.addEventListener('click', function(){
    addSetmodal.className = '';

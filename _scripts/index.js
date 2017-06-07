@@ -1,9 +1,9 @@
 var loginButton = document.getElementById('loginButton');
 var modal = document.getElementById('login-modal');
 var modalBackdrop = document.getElementById('modal-backdrop');
-var closeLoginModal = document.querySelector('.modal-close-button');
+var closeLoginModal = document.getElementById('closeLoginModal');
 
-var modalHeader = document.querySelector('.login-modal-header');
+var modalHeader = document.getElementById('userModalHeader');
 var socialButtons = document.getElementsByClassName('UISocialButton');
 
 loginButton.addEventListener('click', function() {
