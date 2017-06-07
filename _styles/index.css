@@ -158,9 +158,16 @@ a {
 }
 
 .UISocialButton:hover {
-   background-color: rgba(0, 0, 0, 0.10);
    text-decoration-color: white;
    cursor: pointer;
+}
+
+.facebook:hover {
+   background-color: #3b5998;
+}
+
+.google:hover {
+   background-color: #008744;
 }
 
 .featureContainer {
