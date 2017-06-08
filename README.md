@@ -1,9 +1,7 @@
 # Final Project - Group 17
 Group Members:
-.. Jimwel Aguinaldo
-.. Carlos Lopez 
-.. Ryan Wallerius 
+<br> Jimwel Aguinaldo
+<br> Carlos Lopez 
+<br> Ryan Wallerius 
  
- 
- # Project Information:
- 
+ # Bolt
