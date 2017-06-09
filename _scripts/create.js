@@ -7,7 +7,6 @@ var closeSetModal = document.getElementById('closeSetModal');
 addSetButton.addEventListener('click', function(){
    addSetmodal.className = '';
    modalBackdrop.className = '';
-
 });
 
 closeSetModal.addEventListener('click', function(){

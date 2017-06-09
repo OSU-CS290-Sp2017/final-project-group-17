@@ -170,10 +170,12 @@ a {
 
 .facebook:hover {
    background-color: #3b5998;
+   color: white;
 }
 
 .google:hover {
    background-color: #008744;
+   color: white;
 }
 
 .featureContainer {

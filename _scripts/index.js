@@ -20,8 +20,8 @@ signupButton.addEventListener('click', function() {
    modalHeader.innerHTML = 'Sign up';
    socialButtons[0].textContent = 'Sign up with Facebook';
    socialButtons[1].textContent = 'Sign up with Google';
-    modal.className = '';
-    modalBackdrop.className = '';
+   modal.className = '';
+   modalBackdrop.className = '';
 });
 
 closeLoginModal.addEventListener('click', function() {
