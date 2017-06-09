@@ -15,6 +15,7 @@ a {
      font-size: 20px;
      font-weight: lighter;
      overflow: hidden;
+     padding-bottom: 10px;
 }
 
 .navitem {
