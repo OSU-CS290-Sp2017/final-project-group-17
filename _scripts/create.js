@@ -23,4 +23,12 @@ createModal.addEventListener('click', function() {
     window.alert("One of your fields is blank. Fill everything out!");
     modalBackdrop.className= '';
   }
+  else {
+    var box = document.querySelector('.addSetContainer');
+
+    var Class = document.createElement('p');
+    Class.classList.add('addSetButton');
+
+    box.appendChild(Class);
+  }
 })
