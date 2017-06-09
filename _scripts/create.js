@@ -1,3 +1,4 @@
+/*** Creating a study Set ***/
 var addSetButton = document.querySelector('.addSetContainer');
 var modalBackdrop = document.getElementById('modal-backdrop');
 var addSetmodal = document.getElementById('addSet-modal');
@@ -7,12 +8,12 @@ addSetButton.addEventListener('click', function(){
    addSetmodal.className = '';
    modalBackdrop.className = '';
 
-})
+});
 
 closeSetModal.addEventListener('click', function(){
    addSetmodal.className = 'hidden';
    modalBackdrop.className = 'hidden';
-})
+});
 
 var createModal = document.querySelector('.modal-create-button');
 var modalInputElement = document.querySelector('.modal-input-element');
@@ -24,11 +25,18 @@ createModal.addEventListener('click', function() {
     modalBackdrop.className= '';
   }
   else {
-    var box = document.querySelector('.addSetContainer');
+    var mainContainer = document.querySelector('.mainContainer');
+    var setContainer = document.createElement('div');
+    setContainer.classList.add('setContainer');
+    var setClassName = document.createElement('p');
+    var classNameTxt = document.createTextNode(modalInputText.value);
 
-    var Class = document.createElement('p');
-    Class.classList.add('addSetButton');
+    mainContainer.appendChild(setContainer);
+    setContainer.appendChild(setClassName);
+    setClassName.appendChild(classNameTxt);
 
-    box.appendChild(Class);
+    addSetmodal.className = 'hidden';
+    modalBackdrop.className = 'hidden';
+    modalInputText.value = '';
   }
-})
+});
