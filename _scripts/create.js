@@ -13,3 +13,14 @@ closeSetModal.addEventListener('click', function(){
    addSetmodal.className = 'hidden';
    modalBackdrop.className = 'hidden';
 })
+
+var createModal = document.querySelector('.modal-create-button');
+var modalInputElement = document.querySelector('.modal-input-element');
+var modalInputText = document.getElementById('setclass-input');
+
+createModal.addEventListener('click', function() {
+  if (modalInputText.value === "") {
+    window.alert("One of your fields is blank. Fill everything out!");
+    modalBackdrop.className= '';
+  }
+})
