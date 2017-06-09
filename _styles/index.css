@@ -90,6 +90,10 @@ a {
    display: none;
 }
 
+.navitem.logo {
+  float:left;
+}
+
 #modal-backdrop {
   position: fixed;
   top: 0;
