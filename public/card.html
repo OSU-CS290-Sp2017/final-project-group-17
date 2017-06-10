@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+
 <html>
 <head>
    <meta charset="utf-8">
@@ -7,6 +8,7 @@
    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
    <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
    <link rel="stylesheet" href="_styles/index.css" media="screen">
+      <link rel="stylesheet" href="_styles/create.css" media="screen">
    <link rel="stylesheet" href="_styles/card.css" media="screen">
 
 
@@ -16,20 +18,86 @@
    <link rel="manifest" href="assets/icon/manifest.json">
    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
    <meta name="theme-color" content="#ffffff">
-
  </head>
 
 <body>
-  <header>
-    <nav class='navbar'>
-       <ul class='navlist'>
-          <li class='navitem logo'>Bolt</li>
-          <li class='navitem login' id='loginButton'>Login</li>
-          <li class='navitem signup' id='signupButton'> Sign up</li>
-          <li class='navitem create' id='createButton'><a href='create.html'>Create</a></li>
-      </ul>
-    </nav>
- </header>
+   <header>
+     <nav class='navbar'>
+        <ul class='navlist'>
+           <li class='navitem logo'><a href='index.html'>Bolt</a></li>
+           <li class='navitem login' id='loginButton'>Login</li>
+           <li class='navitem signup' id='signupButton'> Sign up</li>
+           <li class='navitem create' id='createButton'><a href='create.html'>Create</a></li>
+       </ul>
+     </nav>
+   </header>
+
+   <main>
+      <p class='header'>Bolt Cards</p>
+      <div ='boltContainer'>
+         <div class='boltCard'>
+            <p class='cardInfo term'>C++</p>
+            <p class='cardInfo definition'>a definition</p>
+         </div>
+      </div>
+
+
+   </main>
+
+   <div class='addSetContainer'>
+      <p class='addSetButton'>Add a Bolt Card</p>
+   </div>
+
+   <div id='modal-backdrop' class='hidden'></div>
+   <div id='addSet-modal' class='hidden'>
+       <div class='modal-dialog'>
+
+          <div class='modal-header'>
+             <p class='login-modal-header' id='addSetModalHeader'>Add a set</p>
+             <button type='button' class='modal-close-button' id='closeSetModal'>x</button>
+          </div>
+
+          <div class='modal-body'>
+             <div class='modal-input-element'>
+                <label for='setclass-input'>Class</label>
+                <textarea id='setclass-input'></textarea>
+             </div>
+             <button type='button' class='modal-create-button' id='createModal'>Create</button>
+          </div>
+
+         </div>
+
+    </div>
+
+   <div id='modal-backdrop' class='hidden'></div>
+   <div id='login-modal' class='hidden'>
+       <div class='modal-dialog'>
+
+         <div class='modal-header'>
+             <p class='login-modal-header' id='userModalHeader'>Log in</p>
+             <button type='button' class='modal-close-button' id='closeLoginModal'>x</button>
+         </div>
+
+         <div class='modal-body'>
+             <div class='LoginPromptModal'>
+                <div class='UISocialButton facebook'>
+                   Login with Facebook
+                </div>
+                <div class='UISocialButton google'>
+                   Login with Google
+                </div>
+             </div>
+         </div>
+
+       </div>
+   </div>
+
+</body>
+
+
+
+
+ </body>
 
 <footer>
    <nav class='socialMedia-Bar'>
