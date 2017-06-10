@@ -1,0 +1,15 @@
+{
+  "class": {
+    "name": "Example 1",
+    "card": [
+      {
+        "term": "Example term 1",
+        "definition": "Thi is the definition for term 1."
+      },
+      {
+        "term": "Example term 2",
+        "definition": "Thi is the definition for term 2."
+      }
+    ]
+  }
+}

@@ -1,3 +1,4 @@
+//javascript variables to tie to certain packages, node functionality and routes.
 var path = require('path');
 var fs = require('fs');
 var express = require('express');
@@ -5,7 +6,7 @@ var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 
-var app = express();
+var app = express(); //instantiate express and assings app variable to it
 var port = process.env.PORT || 3000;
 
 var mongoHost = process.env.MONGO_HOST;
@@ -28,19 +29,17 @@ app.get('/people', function (req, res, next) {
 
   var collection = mongoDB.collection('people');
   collection.find({}).toArray(function (err, peopleData) {
-
+    //error handler
     if (err) {
-      res.status(500).send("Error fetching people from DB.");
+      res.status(500).send("Error fetching study set from DB.");
     } else {
       var templateArgs = {
         people: peopleData,
-        title: "Photos of People"
+        title: "Study Sets"
       };
       res.render('peoplePage', templateArgs);
     }
-
   });
-
 });
 
 app.get('/people/:person', function (req, res, next) {
