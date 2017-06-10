@@ -4,8 +4,7 @@ main{
 }
 
 .boltContainer {
-   margin-left: 30%;
-   margin-right: 30%;
+
 }
 
 .boltCard {
@@ -28,4 +27,30 @@ main{
    display: inline;
    margin: 10px 10px 10px 10px;
    font-size: 20px;
+}
+
+.addBoltContainer {
+   background-color: rgba(0, 0, 0, 0.10);
+   padding-top: 3px;
+   padding-bottom: 3px;
+   text-align: center;
+   margin-top: 20px;
+   margin-left: 25%;
+   margin-right: 25%;
+}
+
+.addBoltContainer:hover {
+   background-color: rgba(0, 0, 0, 0.30);
+   cursor: pointer;
+}
+
+/**** MODAL *****/
+#addBolt-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  overflow: scroll;
 }

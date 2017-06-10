@@ -34,7 +34,7 @@
 
    <main>
       <p class='header'>Bolt Cards</p>
-      <div ='boltContainer'>
+      <div class='boltContainer'>
          <div class='boltCard'>
             <p class='cardInfo term'>C++</p>
             <p class='cardInfo definition'>a definition</p>
@@ -44,23 +44,27 @@
 
    </main>
 
-   <div class='addSetContainer'>
-      <p class='addSetButton'>Add a Bolt Card</p>
+   <div class='addBoltContainer'>
+      <p class='addBoltButton'>Add a Bolt Card</p>
    </div>
 
    <div id='modal-backdrop' class='hidden'></div>
-   <div id='addSet-modal' class='hidden'>
+   <div id='addBolt-modal' class='hidden'>
        <div class='modal-dialog'>
 
           <div class='modal-header'>
-             <p class='login-modal-header' id='addSetModalHeader'>Add a set</p>
-             <button type='button' class='modal-close-button' id='closeSetModal'>x</button>
+             <p class='login-modal-header' id='addBoltModalHeader'>Add a Bolt Card</p>
+             <button type='button' class='modal-close-button' id='closeBoltModal'>x</button>
           </div>
 
           <div class='modal-body'>
              <div class='modal-input-element'>
-                <label for='setclass-input'>Class</label>
-                <textarea id='setclass-input'></textarea>
+                <label for='setTerm-input'>Class</label>
+                <textarea id='setTerm-input'></textarea>
+             </div>
+             <div class='modal-input-element'>
+                <label for='setDef-input'>Definition</label>
+                <textarea id='setDef-input'></textarea>
              </div>
              <button type='button' class='modal-create-button' id='createModal'>Create</button>
           </div>
@@ -95,9 +99,8 @@
 </body>
 
 
-
-
- </body>
+   <script src="_scripts/index.js" charset="utf-8"></script>
+   <script src="_scripts/card.js" charset="utf-8"></script>
 
 <footer>
    <nav class='socialMedia-Bar'>
