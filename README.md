@@ -6,5 +6,9 @@ Group Members:
  
  # Bolt
 Server side:
+
+
 `npm init` - Creates package.json
+
+
 `npm install`
