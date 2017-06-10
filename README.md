@@ -5,3 +5,6 @@ Group Members:
 <br> Ryan Wallerius 
  
  # Bolt
+Server side:
+`npm init` - Creates package.json
+`npm install`
