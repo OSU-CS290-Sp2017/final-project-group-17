@@ -10,4 +10,4 @@ Server side:
 *Delete Node_modules files before trying to start
 `npm install` - install the appropriate repositories
 
-'npm start' - start the local server
+`npm start` - start the local server
