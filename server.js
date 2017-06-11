@@ -39,6 +39,9 @@ app.get('/classes/:classSet', function (req, res, next) {
   if (classData){
     var templateArgs = {
       flashCard: classData[classSet].studySet,
+      //to save the data in classDat.json
+      term: classData.term,
+      definition: classData.defintion,
       stylesheet2: "/card.css",
       script2: "/card.js",
     }
@@ -47,6 +50,39 @@ app.get('/classes/:classSet', function (req, res, next) {
       next();
   }
 });
+
+///----------------------------------------------------------------
+app.post('/classes/:classSet/addClass', function (req, res, next) {
+  var cSet = peopleData[req.params.cSet];
+
+  if (cSet) {
+    if (req.body && req.body.term) {
+
+      var aClass = {
+        term: req.body.term,
+        definition: req.body.definition
+      };
+
+      cSet.classes = cSet.classes || [];
+
+      cSet.classes.push(classSet);
+      fs.writeFile('classData.json', JSON.stringify(classData), function (err) {
+        if (err) {
+          res.status(500).send("Unable to save photo to \"database\".");
+        } else {
+          res.status(200).send();
+        }
+      });
+
+    } else {
+      res.status(400).send("Person photo must have a URL.");
+    }
+
+  } else {
+    next();
+  }
+});
+///----------------------------------------------------------------
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('*', function (req, res) {
