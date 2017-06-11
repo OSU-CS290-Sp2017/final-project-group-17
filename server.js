@@ -12,7 +12,7 @@ var port = process.env.PORT || 3000;
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-
+app.use(bodyParser.json());
 
 app.get('/', function (req, res, next) {
 
@@ -33,19 +33,30 @@ app.get('/classes', function (req, res, next) {
 });
 
 app.get('/classes/:classSet', function (req, res, next) {
-
+  console.log("== url params for request:", req.params);
   var classSet = req.params.classSet;
-
-  var templateArgs = {
-    flashCard: classData[classSet].studySet,
-    stylesheet2: "/card.css",
-    script2: "/card.js",
-  };
-
+  var classData = classData[classSet]; //added
+  if (classData){
+    var templateArgs = {
+      flashCard: classData[classSet].studySet,
+      stylesheet2: "/card.css",
+      script2: "/card.js",
+    }
   res.render('cardPage', templateArgs);
-
+  } else {
+      next();
+  }
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.get('*', function (req, res) {
+  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+});
 
-app.listen(port);
+// Start the server listening on the specified port.
+app.listen(port, function () {
+  console.log("== Server listening on port", port);
+});
+
+//app.listen(port);
+
