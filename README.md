@@ -7,8 +7,7 @@ Group Members:
  # Bolt
 Server side:
 
+*Delete Node_modules files before trying to start
+`npm install` - install the appropriate repositories
 
-`npm init` - Creates package.json
-
-
-`npm install`
+'npm start' - start the local server
