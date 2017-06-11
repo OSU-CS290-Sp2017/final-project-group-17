@@ -11,5 +11,9 @@
     "url": "ls"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0"
+  }
 }

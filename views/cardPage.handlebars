@@ -1,0 +1,45 @@
+{{> header}}
+
+<main>
+   <p class='header'>Bolt Cards</p>
+   <div class='boltContainer'>
+
+      {{#each flashCard}}
+         {{> boltCard}}
+      {{/each}}
+
+   </div>
+
+
+</main>
+
+<div class='addBoltContainer'>
+   <p class='addBoltButton'>Add a Bolt Card</p>
+</div>
+
+<div id='modal-backdrop' class='hidden'></div>
+<div id='addBolt-modal' class='hidden'>
+    <div class='modal-dialog'>
+
+       <div class='modal-header'>
+          <p class='login-modal-header' id='addBoltModalHeader'>Add a Bolt Card</p>
+          <button type='button' class='modal-close-button' id='closeBoltModal'>x</button>
+       </div>
+
+       <div class='modal-body'>
+          <div class='modal-input-element'>
+             <label for='setTerm-input'>Term</label>
+             <textarea id='setTerm-input'></textarea>
+          </div>
+          <div class='modal-input-element'>
+             <label for='setDef-input'>Definition</label>
+             <textarea id='setDef-input'></textarea>
+          </div>
+          <button type='button' class='modal-create-button' id='createModal'>Create</button>
+       </div>
+
+      </div>
+
+</div>
+
+{{> loginModal}}
