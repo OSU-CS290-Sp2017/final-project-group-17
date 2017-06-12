@@ -24,8 +24,9 @@ app.get('/classes', function (req, res, next) {
 
   var templateArgs = {
     classes: classData,
+    title: "Class name - " + classData.name,
     stylesheet2: "/create.css",
-    script2: "/create.js",
+    script2: "/create.js"
   };
 
   res.render('classPage', templateArgs);
@@ -38,10 +39,11 @@ app.get('/classes/:classSet', function (req, res, next) {
   var classData = classData[classSet]; //added
   if (classData){
     var templateArgs = {
-      flashCard: classData[classSet].studySet,
+      //flashCard: classData[classSet].studySet,
+      studySet: classData.studySet,
       //to save the data in classDat.json
-      term: classData.term,
-      definition: classData.defintion,
+      name: classData.name,
+      title: classData.name + " class",
       stylesheet2: "/card.css",
       script2: "/card.js",
     }
@@ -53,9 +55,9 @@ app.get('/classes/:classSet', function (req, res, next) {
 
 ///----------------------------------------------------------------
 app.post('/classes/:classSet/addClass', function (req, res, next) {
-  var cSet = peopleData[req.params.cSet];
+  var classSet = classData[req.params.classSet];
 
-  if (cSet) {
+  if (classSet) {
     if (req.body && req.body.term) {
 
       var aClass = {
@@ -63,9 +65,9 @@ app.post('/classes/:classSet/addClass', function (req, res, next) {
         definition: req.body.definition
       };
 
-      cSet.classes = cSet.classes || [];
+      classSet.studySet = classSet.studySet || [];
 
-      cSet.classes.push(classSet);
+      classSet.studySet.push(aClass);
       fs.writeFile('classData.json', JSON.stringify(classData), function (err) {
         if (err) {
           res.status(500).send("Unable to save photo to \"database\".");
@@ -95,4 +97,3 @@ app.listen(port, function () {
 });
 
 //app.listen(port);
-
