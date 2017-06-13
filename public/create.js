@@ -18,7 +18,6 @@ var createModal = document.querySelector('.modal-create-button');
 var modalInputElement = document.querySelector('.modal-input-element');
 var modalInputText = document.getElementById('setclass-input');
 var statusSets = document.getElementById('status');
-var classNameInput = modalInputText.value;
 
 function addStudySet() {
   if (modalInputText.value === "") {
@@ -35,6 +34,7 @@ function addStudySet() {
     var setClassName = document.createElement('p');
     var classNameTxt = document.createTextNode(modalInputText.value);
 
+
     mainContainer.appendChild(studyCardLink);
     studyCardLink.appendChild(setContainer);
     setContainer.appendChild(setClassName);
@@ -42,9 +42,10 @@ function addStudySet() {
 
     addSetmodal.className = 'hidden';
     modalBackdrop.className = 'hidden';
-    modalInputText.value = '';
+
 
     var postRequest = new XMLHttpRequest();
+
     postRequest.open('POST', '/classes/addclass');
     postRequest.setRequestHeader('Content-Type', 'application/json');
 
@@ -57,13 +58,15 @@ function addStudySet() {
     });
 
    var postBordy = {
-         key: classNameInput,
-         class: classNameInput
+         key: modalInputText.value,
+         class: modalInputText.value
    };
 
    postRequest.send(JSON.stringify(postBordy));
 
+   modalInputText.value = '';
    }
+
 }
 
 
