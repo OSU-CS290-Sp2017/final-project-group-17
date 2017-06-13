@@ -1,0 +1,209 @@
+body {
+     /* font-family: 'Roboto', sans-serif; */
+     font-family: 'Oswald', sans-serif;
+     margin: 0;
+     background-color: #FFFFFF;
+}
+
+a {
+     text-decoration: none;
+     color: white;
+}
+
+.navbar {
+     background-color: #1d6bf2;
+     font-size: 20px;
+     font-weight: lighter;
+     overflow: hidden;
+     padding-bottom: 10px;
+}
+
+.navitem {
+     display: inline-block;
+     color: #FFFFFF;
+     padding-left: 10px;
+     padding-right: 10px;
+}
+.navlist {
+     margin: 0;
+     padding-left: 40px;
+     padding-right: 40px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+
+}
+
+.navitem.login {
+     float: right;
+}
+
+#loginButton:hover {
+   cursor: pointer;
+}
+
+#signupButton:hover {
+   cursor: pointer;
+}
+
+.navitem.signup {
+     float: right;
+}
+
+.navitem.create {
+  float: right;
+}
+
+.mainContainer {
+   margin: 5%;
+}
+
+.header {
+   font-size: 25px;
+}
+
+.banner {
+   text-align: center;
+   margin: 70px 20px 20px 20px;
+   position: relative;
+   right: 60px;
+}
+
+.banner-logo {
+   display: inline-block;
+}
+
+.banner-logo img {
+   width: 200px;
+}
+
+.banner-text {
+   display: inline-block;
+   position: relative;
+   bottom: 35px;
+}
+
+.banner-text p {
+   font-size: 30px;
+
+}
+
+.hidden {
+   display: none;
+}
+
+.navitem.logo {
+  float:left;
+}
+
+#modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#login-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  overflow: scroll;
+}
+
+.modal-dialog {
+  width: auto;
+  max-width: 600px;
+  min-width: 350px;
+  min-height: 300px;
+  margin: 40px auto;
+  background-color: #fff;
+}
+
+.modal-header {
+  position: relative;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.10);
+  text-align: center;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-close-button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.login-modal-header {
+   font-size: 30px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.LoginPromptModal {
+   text-align: center;
+}
+
+.UISocialButton {
+   margin: 20px 20px 20px 20px;
+   border: 1px solid black;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+
+.UISocialButton:hover {
+   text-decoration-color: white;
+   cursor: pointer;
+}
+
+.facebook:hover {
+   background-color: #3b5998;
+}
+
+.google:hover {
+   background-color: #008744;
+}
+
+.featureContainer {
+   margin: 50px 10%;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   text-align: center;
+}
+
+.feature {
+   flex: 0 1 28%;
+   display: flex;
+   margin: 2px;
+   padding: 20px;
+   border: 1px solid #000000;
+   background-color: #fff;
+}
+
+.socialMedia-Bar {
+   text-align: right;
+   margin-right: 50px;
+}
+
+.socialIcon {
+   height: 40px;
+   width: 40px;
+   padding: 5px;
+}
+
+.socialIcon:hover {
+   cursor: pointer;
+}
