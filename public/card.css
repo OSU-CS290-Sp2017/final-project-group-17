@@ -54,3 +54,29 @@ main{
   z-index: 1010;
   overflow: scroll;
 }
+
+.modal-input-element {
+   display: flex;
+   align-items: center;
+   font-size: 20px;
+   margin: 10px 0;
+ }
+
+ .modal-input-element label {
+   font-weight: 600;
+   flex: 1 75px;
+   margin-right: 10px;
+ }
+
+ .modal-input-element input,
+ .modal-input-element textarea {
+   flex: 6 200px;
+   padding: 8px;
+   font-size: 18px;
+   border: 1px solid #aaa;
+ }
+
+ .modal-input-element textarea {
+    height: 17px;
+    width: 10px
+ }
