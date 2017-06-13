@@ -1,37 +1,36 @@
 {
-   "CS160": {
-      "class": "CS 160",
-      "studySet": [
-         {
-            "term": "Python",
-            "definition": "Programming and Scripting Language"
-         },
-         {
-            "term": "Computational Thinking",
-            "definition": "is the thought processes involved in formulating a problem"
-         },
-         {
-            "term": "Array",
-            "definition": "A list of data"
-         }
-      ]
-   },
-
-   "CS261": {
-      "class": "CS 261",
-      "studySet": [
-         {
-            "term": "Queue",
-            "definition": "First in First Out"
-         },
-         {
-            "term": "Stack",
-            "definition": "First in Last out"
-         },
-         {
-            "term": "Linked List",
-            "definition": "A structure that is made up of nodes"
-         }
-      ]
-   }
+  "CS160": {
+    "class": "CS 160",
+    "studySet": [
+      {
+        "term": "Python",
+        "definition": "Programming and Scripting Language"
+      },
+      {
+        "term": "Computational Thinking",
+        "definition": "is the thought processes involved in formulating a problem"
+      },
+      {
+        "term": "Array",
+        "definition": "A list of data"
+      }
+    ]
+  },
+  "CS261": {
+    "class": "CS 261",
+    "studySet": [
+      {
+        "term": "Queue",
+        "definition": "First in First Out"
+      },
+      {
+        "term": "Stack",
+        "definition": "First in Last out"
+      },
+      {
+        "term": "Linked List",
+        "definition": "A structure that is made up of nodes"
+      }
+    ]
+  }
 }
