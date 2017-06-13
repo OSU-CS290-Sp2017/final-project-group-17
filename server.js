@@ -68,9 +68,9 @@ app.post('/classes/addclass', function (req, res, next) {
 
 app.post('/classes/:studySet/addCard', function (req, res, next) {
   console.log("== card params for request:", req.params);
-  var person = classData[req.params.person];
+  var classes = classData[req.params.classes];
 
- if (person) {
+ if (classes) {
    if (req.body && req.body.term) {
 
      var photo = {
@@ -78,9 +78,9 @@ app.post('/classes/:studySet/addCard', function (req, res, next) {
        definition: req.body.definition
      };
 
-     person.photos = person.photos || [];
+     classes.studySet = classes.studySet || [];
 
-     person.photos.push(photo);
+     classes.studySet.push(photo);
      fs.writeFile('classData.json', JSON.stringify(classData), function (err) {
        if (err) {
          res.status(500).send("Unable to save photo to \"database\".");
@@ -90,7 +90,7 @@ app.post('/classes/:studySet/addCard', function (req, res, next) {
      });
 
    } else {
-     res.status(400).send("Person photo must have a URL.");
+     res.status(400).send("Person photo must have a term.");
    }
 
  } else {
