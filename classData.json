@@ -33,29 +33,12 @@
       }
     ]
   },
-  "CS 271": {
-    "class": "CS 271",
-    "studySet": []
-  },
-  "jimwel": {
-    "class": "jimwel",
-    "studySet": []
-  },
-  "hawaii": {
-    "class": "hawaii",
+  "Math": {
+    "class": "Math",
     "studySet": [
       {
-        "term": "aloha",
-        "definition": "hi"
-      }
-    ]
-  },
-  "wefwe wefwf": {
-    "class": "wefwe wefwf",
-    "studySet": [
-      {
-        "term": "wef",
-        "definition": "wefwe"
+        "term": "integrals",
+        "definition": "suck"
       }
     ]
   }
