@@ -33,6 +33,7 @@
       }
     ]
   },
+<<<<<<< HEAD
   "CS 271": {
     "class": "CS 271",
     "studySet": []
@@ -56,10 +57,14 @@
   },
   "wefwe wefwf": {
     "class": "wefwe wefwf",
+=======
+  "Math": {
+    "class": "Math",
+>>>>>>> fc33f71cb719a7705700b263843b36cab9bf9523
     "studySet": [
       {
-        "term": "wef",
-        "definition": "wefwe"
+        "term": "integrals",
+        "definition": "suck"
       }
     ]
   }
