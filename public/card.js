@@ -57,12 +57,14 @@ createModal.addEventListener('click', function(){
 
       addSetmodal.className = 'hidden';
       modalBackdrop.className = 'hidden';
-      TermInputText.value = '';
-      DefInputText.value = '';
 
       var postRequest = new XMLHttpRequest();
 
-      postRequest.open('POST', '/classes/:studySet/addCard');
+      var pathComponents = window.location.pathname.split('/');
+      var postURL = '/classes/' + pathComponents[2] + '/addCard';
+      console.log(postURL);
+
+      postRequest.open('POST', postURL);
       postRequest.setRequestHeader('Content-Type', 'application/json');
 
       postRequest.addEventListener('load', function(event) {
@@ -73,14 +75,15 @@ createModal.addEventListener('click', function(){
       callback(error);
       });
 
-      var postBordy = {
-         term: modalInputText.value,
-         definition: modalInputText.value
+      var postBody = {
+         term: TermInputText.value,
+         definition: DefInputText.value
       };
 
-      postRequest.send(JSON.stringify(postBordy));
+      postRequest.send(JSON.stringify(postBody));
 
-      modalInputText.value = '';
+      TermInputText.value = '';
+      DefInputText.value = '';
 
       location.reload();
     }

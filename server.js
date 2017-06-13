@@ -68,34 +68,23 @@ app.post('/classes/addclass', function (req, res, next) {
 
 app.post('/classes/:studySet/addCard', function (req, res, next) {
   console.log("== card params for request:", req.params);
-  var classes = classData[req.params.classes];
+  var studySet = classData[req.params.studySet];
 
- if (classes) {
-   if (req.body && req.body.term) {
+  var newBoltCard = {
+     term: req.body.term,
+     definition: req.body.definition
+  };
 
-     var photo = {
-       term: req.body.term,
-       definition: req.body.definition
-     };
+  studySet.studySet.push(newBoltCard);
+  fs.writeFile('classData.json', JSON.stringify(classData, null, 2), function(err) {
+     if(err) {
+        res.status(500).send('Unable to create new class set');
+     }
+     else {
+        res.status(200).send();
+     }
+  });
 
-     classes.studySet = classes.studySet || [];
-
-     classes.studySet.push(photo);
-     fs.writeFile('classData.json', JSON.stringify(classData), function (err) {
-       if (err) {
-         res.status(500).send("Unable to save photo to \"database\".");
-       } else {
-         res.status(200).send();
-       }
-     });
-
-   } else {
-     res.status(400).send("Person photo must have a term.");
-   }
-
- } else {
-   next();
- }
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
