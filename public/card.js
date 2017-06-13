@@ -20,6 +20,17 @@ var createModal = document.querySelector('.modal-create-button');
 var TermInputText = document.getElementById('setTerm-input');
 var DefInputText = document.getElementById('setDef-input');
 
+/*
+ * Small function to get a person's identifier from the current URL.
+ */
+function getPersonIDFromLocation() {
+  var pathComponents = window.location.pathname.split('/');
+  if (pathComponents[0] !== '' && pathComponents[1] !== 'people') {
+    return null;
+  }
+  return pathComponents[2];
+}
+
 createModal.addEventListener('click', function(){
    if (TermInputText.value === '' || DefInputText.value == '') {
      window.alert("One of your fields is blank. Fill everything out!");
@@ -48,5 +59,29 @@ createModal.addEventListener('click', function(){
       modalBackdrop.className = 'hidden';
       TermInputText.value = '';
       DefInputText.value = '';
-   }
+
+      var postRequest = new XMLHttpRequest();
+
+      postRequest.open('POST', '/classes/:studySet/addCard');
+      postRequest.setRequestHeader('Content-Type', 'application/json');
+
+      postRequest.addEventListener('load', function(event) {
+      var error;
+      if(event.target.status !== 200) {
+         error = event.target.response;
+      }
+      callback(error);
+      });
+
+      var postBordy = {
+         term: modalInputText.value,
+         definition: modalInputText.value
+      };
+
+      postRequest.send(JSON.stringify(postBordy));
+
+      modalInputText.value = '';
+
+      location.reload();
+    }
 })
