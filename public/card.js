@@ -3,6 +3,8 @@ var addSetButton = document.querySelector('.addBoltContainer');
 var modalBackdrop = document.getElementById('modal-backdrop');
 var addSetmodal = document.getElementById('addBolt-modal');
 var closeSetModal = document.getElementById('closeBoltModal');
+var term = document.getElementById('term');
+var definition = document.getElementById('definition');
 
 addSetButton.addEventListener('click', function(){
    addSetmodal.className = '';
