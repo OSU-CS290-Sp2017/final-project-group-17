@@ -33,38 +33,12 @@
       }
     ]
   },
-<<<<<<< HEAD
   "CS 271": {
     "class": "CS 271",
-    "studySet": []
-  },
-  "jimwel": {
-    "class": "jimwel",
-    "studySet": []
-  },
-  "hawaii": {
-    "class": "hawaii",
     "studySet": [
       {
-        "term": "aloha",
-        "definition": "hi"
-      },
-      {
-        "term": "mahalo",
-        "definition": "thank you"
-      }
-    ]
-  },
-  "wefwe wefwf": {
-    "class": "wefwe wefwf",
-=======
-  "Math": {
-    "class": "Math",
->>>>>>> fc33f71cb719a7705700b263843b36cab9bf9523
-    "studySet": [
-      {
-        "term": "integrals",
-        "definition": "suck"
+        "term": "And Gate ",
+        "definition": "Represented with D"
       }
     ]
   }
