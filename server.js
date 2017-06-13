@@ -4,6 +4,8 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
 
+var bodyParser = require('body-parser');
+
 var classData = require('./classData');
 var app = express();
 var port = process.env.PORT || 3000;
@@ -12,7 +14,6 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 app.use(bodyParser.json());
-
 
 app.get('/', function (req, res, next) {
 
@@ -32,19 +33,6 @@ app.get('/classes', function (req, res, next) {
 
 });
 
-app.get('/classes/:classSet', function (req, res, next) {
-
-  var classSet = req.params.classSet;
-
-  var templateArgs = {
-    flashCard: classData[classSet].studySet,
-    stylesheet2: "/card.css",
-    script2: "/card.js",
-  };
-
-  res.render('cardPage', templateArgs);
-});
-
 app.post('/classes/addclass', function (req, res, next) {
 
    var newClassSet = {
@@ -62,8 +50,15 @@ app.post('/classes/addclass', function (req, res, next) {
          res.status(200).send();
       }
    });
+
 });
+///----------------------------------------------------------------
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(port);
+
+app.listen(port, function () {
+  console.log("== Server listening on port", port);
+});
+
+
