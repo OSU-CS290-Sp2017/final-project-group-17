@@ -1,17 +1,24 @@
 {
   "name": "final-project-group-17",
   "version": "1.0.0",
-  "description": "bolt",
-  "main": "index.js",
+  "description": "Bolt - Basic dynamic content serving with Express",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "handlebars views/partials/boltCard.handlebars -f public/index.js",
+    "prestart": "npm run build",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "ls"
+    "url": "git+ssh://git@github.com/OSU-CS290-Sp2017/final-project-group-17.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Carlos Lopez <lopezmoc@oregonstate.edu>, Jimwel Aguinaldo, Ryan Wallerius",
+  "license": "OSU",
+  "bugs": {
+    "url": "https://github.com/OSU-CS290-Sp2017/final-project-group-17/issues"
+  },
+  "homepage": "https://github.com/OSU-CS290-Sp2017/final-project-group-17#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
