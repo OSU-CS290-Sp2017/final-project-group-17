@@ -18,8 +18,9 @@ var createModal = document.querySelector('.modal-create-button');
 var modalInputElement = document.querySelector('.modal-input-element');
 var modalInputText = document.getElementById('setclass-input');
 var statusSets = document.getElementById('status');
+var classNameInput = modalInputText.value;
 
-createModal.addEventListener('click', function() {
+function addStudySet() {
   if (modalInputText.value === "") {
     window.alert("One of your fields is blank. Fill everything out!");
     modalBackdrop.className= '';
@@ -43,9 +44,27 @@ createModal.addEventListener('click', function() {
     modalBackdrop.className = 'hidden';
     modalInputText.value = '';
 
-    statusSets.className = 'hidden';
-    if(statusSets.className == ''){
-      className = 'hidden';
+    var postRequest = new XMLHttpRequest();
+    postRequest.open('POST', '/classes/addclass');
+    postRequest.setRequestHeader('Content-Type', 'application/json');
+
+    postRequest.addEventListener('load', function(event) {
+      var error;
+      if(event.target.status !== 200) {
+         error = event.target.response;
+      }
+      callback(error);
+    });
+
+   var postBordy = {
+         key: classNameInput,
+         class: classNameInput
+   };
+
+   postRequest.send(JSON.stringify(postBordy));
+
    }
-  }
-});
+}
+
+
+createModal.addEventListener('click', addStudySet);

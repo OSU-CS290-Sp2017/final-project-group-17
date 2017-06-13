@@ -2,6 +2,7 @@ var path = require('path');
 var fs = require('fs');
 var express = require('express');
 var exphbs = require('express-handlebars');
+var bodyParser = require('body-parser');
 
 var classData = require('./classData');
 var app = express();
@@ -10,6 +11,7 @@ var port = process.env.PORT || 3000;
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+app.use(bodyParser.json());
 
 
 app.get('/', function (req, res, next) {
@@ -41,7 +43,25 @@ app.get('/classes/:classSet', function (req, res, next) {
   };
 
   res.render('cardPage', templateArgs);
+});
 
+app.post('/classes/addclass', function (req, res, next) {
+
+   var newClassSet = {
+      class: req.body.class,
+      studySet: []
+   };
+
+   var key = req.body.key;
+   classData[key] = newClassSet;
+   fs.writeFile('classData.json', JSON.stringify(classData, null, 2), function(err) {
+      if(err) {
+         res.status(500).send('Unable to create new class set');
+      }
+      else {
+         res.status(200).send();
+      }
+   });
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
