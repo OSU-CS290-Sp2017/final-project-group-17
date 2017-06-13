@@ -33,6 +33,19 @@ app.get('/classes', function (req, res, next) {
 
 });
 
+app.get('/classes/:classSet', function (req, res, next) {
+
+  var classSet = req.params.classSet;
+
+  var templateArgs = {
+    flashCard: classData[classSet].studySet,
+    stylesheet2: "/card.css",
+    script2: "/card.js",
+  };
+
+  res.render('cardPage', templateArgs);
+});
+
 app.post('/classes/addclass', function (req, res, next) {
 
    var newClassSet = {
@@ -52,7 +65,6 @@ app.post('/classes/addclass', function (req, res, next) {
    });
 
 });
-///----------------------------------------------------------------
 
 app.use(express.static(path.join(__dirname, 'public')));
 
