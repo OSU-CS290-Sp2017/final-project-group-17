@@ -34,7 +34,7 @@ app.get('/classes', function (req, res, next) {
 });
 
 app.get('/classes/:classSet', function (req, res, next) {
-
+console.log("== class params for request:", req.params);
   var classSet = req.params.classSet;
 
   var templateArgs = {
@@ -66,6 +66,38 @@ app.post('/classes/addclass', function (req, res, next) {
 
 });
 
+app.post('/classes/:studySet/addCard', function (req, res, next) {
+  console.log("== card params for request:", req.params);
+  var classes = classData[req.params.classes];
+
+ if (classes) {
+   if (req.body && req.body.term) {
+
+     var photo = {
+       term: req.body.term,
+       definition: req.body.definition
+     };
+
+     classes.studySet = classes.studySet || [];
+
+     classes.studySet.push(photo);
+     fs.writeFile('classData.json', JSON.stringify(classData), function (err) {
+       if (err) {
+         res.status(500).send("Unable to save photo to \"database\".");
+       } else {
+         res.status(200).send();
+       }
+     });
+
+   } else {
+     res.status(400).send("Person photo must have a term.");
+   }
+
+ } else {
+   next();
+ }
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('*', function (req, res) {
   res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
@@ -74,5 +106,3 @@ app.get('*', function (req, res) {
 app.listen(port, function () {
   console.log("== Server listening on port", port);
 });
-
-
